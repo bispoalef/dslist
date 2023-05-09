@@ -1,5 +1,6 @@
 package com.bispoalef.dslist.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Getter
 @EqualsAndHashCode
-@Table(name = "td_game")
+@Table(name = "tb_game")
 public class Game {
 
     @Id
@@ -26,9 +27,13 @@ public class Game {
     private Integer ano;
     private String genero;
     private String plataforma;
-    private Double placar;
+    private Double nota;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String descricaoResumida;
+
+    @Column(columnDefinition = "TEXT")
     private String descricaoCompleta;
 
 }
