@@ -1,11 +1,13 @@
 package com.bispoalef.dslist.dto;
 
 import com.bispoalef.dslist.entities.Game;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 public class GameMinDTO {
 
