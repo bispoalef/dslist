@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
-
 @NoArgsConstructor
 @Getter
 @Setter
@@ -21,7 +20,6 @@ public class GameDTO {
     private String imgUrl;
     private String descricaoResumida;
     private String descricaoCompleta;
-
 
     public GameDTO(Game game) {
         BeanUtils.copyProperties(game, this);

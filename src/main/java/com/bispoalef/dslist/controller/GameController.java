@@ -19,7 +19,7 @@ public class GameController {
     @Autowired
     GameService gameService;
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/id")
     public GameDTO findById(@RequestParam Long id){
 
 
