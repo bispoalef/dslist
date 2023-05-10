@@ -3,6 +3,7 @@ package com.bispoalef.dslist.service;
 import com.bispoalef.dslist.dto.GameDTO;
 import com.bispoalef.dslist.dto.GameMinDTO;
 import com.bispoalef.dslist.entities.Game;
+import com.bispoalef.dslist.projection.GameMinProjection;
 import com.bispoalef.dslist.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,14 @@ public class GameService {
     public List<GameMinDTO> findAll() {
 
        List<Game> result =  gameRepository.findAll();
+
+        return result.stream().map(GameMinDTO::new).toList();
+    }
+
+    @Transactional(readOnly = true)
+    public List<GameMinDTO> buscarPorList(Long id) {
+
+       List<GameMinProjection> result =  gameRepository.buscarPorList(id);
 
         return result.stream().map(GameMinDTO::new).toList();
     }
