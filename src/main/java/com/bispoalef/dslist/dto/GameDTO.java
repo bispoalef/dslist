@@ -11,17 +11,33 @@ import org.springframework.beans.BeanUtils;
 @Setter
 public class GameDTO {
 
-    private Long id;
-    private String titulo;
-    private Integer ano;
-    private String genero;
-    private String plataforma;
-    private Double nota;
-    private String imgUrl;
-    private String descricaoResumida;
-    private String descricaoCompleta;
+//    private Long id;
+//    private String titulo;
+//    private Integer ano;
+//    private String genero;
+//    private String plataforma;
+//    private Double nota;
+//    private String imgUrl;
+//    private String descricaoResumida;
+//    private String descricaoCompleta;
+//
+//    public GameDTO(Game game) {
+//        BeanUtils.copyProperties(game, this);
+//    }
 
-    public GameDTO(Game game) {
-        BeanUtils.copyProperties(game, this);
+    public static class Response{;
+
+        public interface myGameDTO{
+             Long getId();
+             String getTitulo();
+            Double  getNota();
+            Integer  getAno();
+            String  getGenero();
+            String  getPlataforma();
+             String  getImgUrl();
+             String  getDescricaoResumida();
+             String  getDescricaoCompleta();
+
+        }
     }
 }

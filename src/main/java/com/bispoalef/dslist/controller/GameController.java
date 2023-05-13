@@ -19,15 +19,14 @@ public class GameController {
     @Autowired
     GameService gameService;
 
-    @GetMapping(value = "/id")
-    public GameDTO findById(@RequestParam Long id){
-
-
-        return gameService.findById(id);
+    @GetMapping(value = "buscar")
+    public  List<GameDTO.Response.myGameDTO> buscar(
+            @RequestParam(required = false) Long id){
+        return gameService.buscar(id);
     }
 
     @GetMapping()
     public List<GameMinDTO> findAll(){
-        return gameService.findAll();
+        return gameService.buscarTodos();
     }
 }

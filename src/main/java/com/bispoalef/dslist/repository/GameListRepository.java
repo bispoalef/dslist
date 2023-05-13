@@ -7,6 +7,10 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface GameListRepository extends JpaRepository<GameList, Long> {
 
+
+
+
+
     @Modifying
     @Query(nativeQuery = true,
     value = "UPDATE tb_pertence " +
